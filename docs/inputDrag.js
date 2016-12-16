@@ -35,6 +35,7 @@
 			if (isDown == 1 && (_xDiff >= settings.min && _xDiff <= settings.max))
 			{
 				el.val(_xDiff);
+				el.trigger("input");
 			}		
 		});
 	};
