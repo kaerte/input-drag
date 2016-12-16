@@ -7,8 +7,7 @@
 
 		var isDown = 0,
 			el = $(this),
-			_xStart = 0,
-			paused = null;
+			_xStart = 0;
 
 		el.mousedown(function(e) {
 			isDown = 1;
@@ -23,11 +22,9 @@
 			isDown = 0;
 		});
 		$(document).mousemove(function(e) {
-
 			if(!isDown) {
 				return;
 			}
-
 			var _x = event.clientX;
 			if(_x) {
 				var _xDiff = _x - _xStart;
@@ -41,11 +38,6 @@
 			if (isDown == 1 && (_xDiff > settings.min && _xDiff < settings.max))
 			{
 				el.val(_xDiff);
-				if (!paused){
-					el.trigger("input");
-					paused = setTimeout(function(){paused=null}, 250);
-				}
-				
 			}		
 		});
 	};

@@ -27,16 +27,20 @@
 				</div>
 			</div>
 		</div>
+		
 
 
 		
 
-		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="inputDrag.js"></script>
 		
 
 		<script>
 			$('#test').inputDrag({min:0, max:280});
+			$('#test').on('input', function() {
+				console.log('input');
+			});
 		</script>
 
 	</body>
